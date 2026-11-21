@@ -1,44 +1,61 @@
 # Kotlin Challenge
 
-A step-by-step Kotlin/JVM learning project: a Student Management System built in small stages.
+This is my own Kotlin challenge. I am building a Student Management System one small stage at a time, and I am trying to actually understand the code instead of just letting AI write it for me.
 
-## Current stage
+So the rule is simple: no using AI as a shortcut. I read the code, type the exercises myself, run it, break it, and then fix it. If something does not make sense, I go back and read the file again before asking for help. That is the whole point of this repo.
 
-Stage 1 focuses on Kotlin fundamentals and an interactive challenge:
+Right now it is only a console app. No database, no fancy framework, no magic. Just Kotlin, the JVM and a few small files.
 
-- `val` and `var`
-- basic data types: `String`, `Int`, `Double`, `Boolean`
-- operators and string templates
-- console input with `readln()`
-- `if`/`else`, `when`, `while`
+## What stage 1 covers
+
+In this stage I am playing with:
+
+- `val` and `var`, and why I should reach for `val` first
+- basic types like `String`, `Int`, `Double` and `Boolean`
+- operators, ranges and string templates
+- reading input from the keyboard with `readln()`
+- `if`/`else`, `when` and `while`
 - functions, parameters and return types
-- validation using `toIntOrNull()`
+- checking input with `toIntOrNull()`
 
-A bonus console quiz covers Jetpack Compose vocabulary (`@Composable`, `Text`, `Column`, `LazyColumn`, `remember`, `Scaffold`, `NavHost`, and others). These are Compose APIs, not core Kotlin keywords. No Android SDK or Compose UI runtime is used yet.
+The quiz files are there to test me, not just to look nice. If I get a question wrong, I read the hint and try again.
+
+## How I use this repo
+
+1. Open the stage file and read it slowly.
+2. Type the exercise myself in `StageOneExercises.kt`.
+3. Run the app and see what happens.
+4. Read the error properly instead of panicking.
+5. Fix one thing at a time.
+6. Only after trying, check the hint or ask for help.
+
+I am not in a hurry. Understanding one small thing properly is better than copying ten things I cannot explain.
 
 ## Project structure
 
 ```text
 src/main/kotlin/com/studentmanagement/
   Main.kt                  entry point
-  Basics.kt                Stage 1 warm-up: name, age, menu
-  Challenge.kt             Stage 1 quiz with hints and score
-  ComposeVocabulary.kt     Compose API vocabulary quiz and cheat sheet
+  Basics.kt                warm-up: name, age and a small menu
+  Challenge.kt             quiz with hints and a score
+  ComposeVocabulary.kt     Compose vocabulary quiz
   Input.kt                 shared input helpers
-  StageOneExercises.kt     practice stubs using TODO(...)
-src/test/kotlin/com/studentmanagement/   reserved for unit tests
-stages/                                  reserved for stage notes
+  StageOneExercises.kt     my practice stubs using TODO(...)
+
+src/test/kotlin/com/studentmanagement/   for tests later
+stages/                                  notes for later stages
+compose-showcase/                        separate Compose reference, not part of the console build
 ```
 
-## Requirements
+## What I need to run it
 
-- JDK 17 or newer (JDK 21 recommended)
-- Kotlin compiler (`kotlinc`) 1.9 or newer
-- VS Code with the Kotlin extension (optional)
+- JDK 17 or newer (I prefer JDK 21)
+- Kotlin compiler (`kotlinc`), version 1.9 or newer
+- VS Code with the Kotlin extension is nice, but not required
 
-These tools are not bundled in this repository.
+These tools are not inside this repo. I need to have them on my machine first.
 
-## Build and run
+## Running it
 
 From the project root:
 
@@ -47,22 +64,28 @@ kotlinc src/main/kotlin/com/studentmanagement -include-runtime -d student-manage
 java -jar student-management.jar
 ```
 
+If that fails, I check two things first: is Java installed, and is `kotlinc` on my PATH?
+
 ## Exercises
 
-Replace each `TODO(...)` in `StageOneExercises.kt`:
+I have not written the answers here on purpose.
+
+In `StageOneExercises.kt`, replace each `TODO(...)`:
 
 1. Convert Celsius to Fahrenheit.
-2. Describe a number as negative, zero or positive using `when`.
-3. Repeat text using a `for` loop.
+2. Say if a number is negative, zero or positive using `when`.
+3. Repeat some text using a `for` loop.
 4. Use a default argument and a string template in a greeting.
 
-Answers are intentionally not included. Attempt them first, then compare with your mentor.
+I should be able to explain my answer out loud before I move on.
 
-## Roadmap
+## What I want to add later
 
-- Stage 2: functions with default/named arguments, lists, mutable lists and the `Student` model
+- Stage 2: default and named arguments, lists, mutable lists and a real `Student` model
 - Stage 3: sets, maps, arrays and collection operations
-- Stage 4: classes, data classes, constructors, encapsulation and inheritance
-- Stage 5: interfaces, null safety, sealed classes and enums
+- Stage 4: classes, data classes, constructors and encapsulation
+- Stage 5: inheritance, interfaces, enums, sealed classes and null safety
 - Stage 6: exceptions, lambdas, higher-order functions, extension functions and scope functions
-- Stage 7: file handling, save/load and unit tests
+- Stage 7: saving to a file, loading from a file and unit tests
+
+The code is not perfect, and neither am I yet. That is fine. This repo is where I practise.
