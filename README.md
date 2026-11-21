@@ -1,35 +1,36 @@
 # Kotlin Challenge
 
-This is my own Kotlin challenge. I am building a Student Management System one small stage at a time, and I am trying to actually understand the code instead of just letting AI write it for me.
+This is my Kotlin challenge. I am building a Student Management System step by step, and I try not to use AI as a shortcut. I just try.
 
-So the rule is simple: no using AI as a shortcut. I read the code, type the exercises myself, run it, break it, and then fix it. If something does not make sense, I go back and read the file again before asking for help. That is the whole point of this repo.
+Right now it is a console app. No database, no fancy framework. Just Kotlin, the JVM and a few small files.
 
-Right now it is only a console app. No database, no fancy framework, no magic. Just Kotlin, the JVM and a few small files.
+## How I want to learn here
 
-## What stage 1 covers
+- Act as my Kotlin tutor, not a code generator.
+- Don't write the entire project for me.
+- Explain concepts in simple, beginner-friendly language.
+- Give me one small task at a time.
+- Let me write the code before showing the solution.
+- When I make mistakes, explain what went wrong and how to fix it.
+- Give me hints before revealing answers.
+- Ask me questions to check whether I understand the code.
+- Don't move to the next stage until I understand the current one.
+- Use my Student Management System as the practical example.
+- Challenge me to explain my code in my own words.
 
-In this stage I am playing with:
+I am not in a hurry. If I cannot explain a line, I am not done with it yet.
 
-- `val` and `var`, and why I should reach for `val` first
-- basic types like `String`, `Int`, `Double` and `Boolean`
-- operators, ranges and string templates
-- reading input from the keyboard with `readln()`
-- `if`/`else`, `when` and `while`
-- functions, parameters and return types
-- checking input with `toIntOrNull()`
+## My learning stages
 
-The quiz files are there to test me, not just to look nice. If I get a question wrong, I read the hint and try again.
+- Stage 1: Kotlin basics, variables, data types, conditions, loops and functions
+- Stage 2: Lists, mutable lists and function arguments
+- Stage 3: Sets, maps, arrays and collections
+- Stage 4: Classes, objects, constructors and data classes
+- Stage 5: Inheritance, interfaces, enums and null safety
+- Stage 6: Lambdas, exceptions and higher-order functions
+- Stage 7: File handling and unit testing
 
-## How I use this repo
-
-1. Open the stage file and read it slowly.
-2. Type the exercise myself in `StageOneExercises.kt`.
-3. Run the app and see what happens.
-4. Read the error properly instead of panicking.
-5. Fix one thing at a time.
-6. Only after trying, check the hint or ask for help.
-
-I am not in a hurry. Understanding one small thing properly is better than copying ten things I cannot explain.
+I am on Stage 1 now. In this stage I am playing with `val` and `var`, basic types, string templates, `readln()`, `if`/`else`, `when`, `while`, functions and `toIntOrNull()`.
 
 ## Project structure
 
@@ -78,14 +79,5 @@ In `StageOneExercises.kt`, replace each `TODO(...)`:
 4. Use a default argument and a string template in a greeting.
 
 I should be able to explain my answer out loud before I move on.
-
-## What I want to add later
-
-- Stage 2: default and named arguments, lists, mutable lists and a real `Student` model
-- Stage 3: sets, maps, arrays and collection operations
-- Stage 4: classes, data classes, constructors and encapsulation
-- Stage 5: inheritance, interfaces, enums, sealed classes and null safety
-- Stage 6: exceptions, lambdas, higher-order functions, extension functions and scope functions
-- Stage 7: saving to a file, loading from a file and unit tests
 
 The code is not perfect, and neither am I yet. That is fine. This repo is where I practise.
