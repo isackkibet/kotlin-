@@ -14,25 +14,7 @@ Stage 1 focuses on Kotlin fundamentals and an interactive challenge:
 - functions, parameters and return types
 - validation using `toIntOrNull()`
 
-A bonus console quiz covers all 15 Jetpack Compose vocabulary items below. These are Compose APIs, not core Kotlin keywords. No Android SDK or Compose UI runtime is used yet.
-
-| You want to...               | Use              |
-|------------------------------|------------------|
-| Declare a Compose UI function | `@Composable`    |
-| Display words                | `Text()`         |
-| Create a button              | `Button()`       |
-| Allow typing                 | `TextField()`    |
-| Arrange vertically           | `Column()`       |
-| Arrange horizontally         | `Row()`          |
-| Overlay components           | `Box()`          |
-| Display pictures             | `Image()`        |
-| Display symbols              | `Icon()`         |
-| Show many records            | `LazyColumn()`   |
-| Remember screen data         | `remember`       |
-| Track changing data          | `mutableStateOf()` |
-| Style components             | `Modifier`       |
-| Structure a screen           | `Scaffold()`     |
-| Move between screens         | `NavHost()`      |
+A bonus console quiz covers Jetpack Compose vocabulary (`@Composable`, `Text`, `Column`, `LazyColumn`, `remember`, `Scaffold`, `NavHost`, and others). These are Compose APIs, not core Kotlin keywords. No Android SDK or Compose UI runtime is used yet.
 
 ## Project structure
 
