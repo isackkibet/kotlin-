@@ -7,56 +7,169 @@ fun runComposeVocabularyChallenge() {
 
     var score = 0
 
-    if (readChoice("Which declares a Compose UI function? (a) @Composable (b) Modifier (c) Scaffold: ", "abc") == "a") {
-        score++
-    } else {
-        println("Hint: @Composable marks a function that builds UI.")
+    if (askQuestion(
+            "Which declares a Compose UI function?",
+            "(a) @Composable (b) Modifier (c) Scaffold",
+            "a",
+            "@Composable marks a function that builds UI."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API should you use to display words?",
+            "(a) Box() (b) Text() (c) Row()",
+            "b",
+            "Text() displays words."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API creates a clickable button?",
+            "(a) Button() (b) Image() (c) Column()",
+            "a",
+            "Button() creates a clickable button."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API allows typing?",
+            "(a) Icon() (b) TextField() (c) Box()",
+            "b",
+            "TextField() accepts user input."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API arranges components vertically?",
+            "(a) Row() (b) Column() (c) Box()",
+            "b",
+            "Column() stacks components top to bottom."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API arranges components horizontally?",
+            "(a) Column() (b) Row() (c) Scaffold()",
+            "b",
+            "Row() places components left to right."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API overlays components?",
+            "(a) Box() (b) LazyColumn() (c) Text()",
+            "a",
+            "Box() places components on top of each other."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API displays pictures?",
+            "(a) Icon() (b) Image() (c) Button()",
+            "b",
+            "Image() displays pictures."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API displays symbols?",
+            "(a) Text() (b) Image() (c) Icon()",
+            "c",
+            "Icon() displays small symbols."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API shows many records efficiently?",
+            "(a) Column() (b) LazyColumn() (c) Row()",
+            "b",
+            "LazyColumn() only composes visible items."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API remembers screen data across recompositions?",
+            "(a) remember (b) Modifier (c) NavHost()",
+            "a",
+            "remember stores a value in the composition."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API tracks changing data and triggers recomposition?",
+            "(a) mutableStateOf() (b) Text() (c) Scaffold()",
+            "a",
+            "mutableStateOf() creates observable state."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API styles components?",
+            "(a) Scaffold() (b) Modifier (c) remember",
+            "b",
+            "Modifier controls layout, appearance and interaction."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API structures a screen?",
+            "(a) Scaffold() (b) Box() (c) TextField()",
+            "a",
+            "Scaffold() provides standard screen slots."
+        )
+    ) score++
+
+    if (askQuestion(
+            "Which API moves between screens?",
+            "(a) NavHost() (b) Column() (c) Image()",
+            "a",
+            "NavHost() manages navigation between screens."
+        )
+    ) score++
+
+    val result = when {
+        score == 15 -> "All Compose vocabulary mastered"
+        score >= 12 -> "Strong - review the hints"
+        score >= 8 -> "Getting there - repeat the quiz"
+        else -> "Keep learning - read the table below"
     }
 
-    if (readChoice("Which displays a scrolling list efficiently? (a) Row (b) LazyColumn (c) Box: ", "abc") == "b") {
-        score++
-    } else {
-        println("Hint: LazyColumn only composes visible items.")
-    }
-
-    if (readChoice("Which keeps UI state across recompositions? (a) remember (b) Text (c) Icon: ", "abc") == "a") {
-        score++
-    } else {
-        println("Hint: remember stores a value in the composition.")
-    }
-
-    if (readChoice("Which arranges children vertically? (a) Row (b) Column (c) Box: ", "abc") == "b") {
-        score++
-    } else {
-        println("Hint: Column stacks top to bottom.")
-    }
-
-    if (readChoice("Which provides standard screen structure? (a) Scaffold (b) TextField (c) Image: ", "abc") == "a") {
-        score++
-    } else {
-        println("Hint: Scaffold provides topBar, content and floatingActionButton slots.")
-    }
-
-    println("Your Compose vocabulary score: $score/5")
-    printComposeCheatSheet()
+    println("Your Compose vocabulary score: $score/15 - $result")
+    printComposeApiTable()
 }
 
-private fun printComposeCheatSheet() {
+private fun askQuestion(
+    question: String,
+    options: String,
+    correct: String,
+    hint: String
+): Boolean {
+    val answer = readChoice("$question $options: ", "abc")
+
+    if (answer == correct) {
+        return true
+    }
+
+    println(hint)
+    return false
+}
+
+private fun printComposeApiTable() {
     println()
-    println("Compose cheat sheet")
-    println("@Composable - declares a UI function")
-    println("Text - displays text")
-    println("Button - clickable button")
-    println("TextField - accepts user input")
-    println("Column - vertical arrangement")
-    println("Row - horizontal arrangement")
-    println("Box - overlapping container")
-    println("Image - displays an image")
-    println("Icon - displays an icon")
-    println("LazyColumn - efficient scrolling list")
-    println("remember - keeps state across recompositions")
-    println("mutableStateOf - creates observable state")
-    println("Modifier - controls layout, appearance and interaction")
-    println("Scaffold - standard screen structure")
-    println("NavHost - manages navigation between screens")
+    println("You want to...                     Use")
+    println("Declare a Compose UI function      @Composable")
+    println("Display words                      Text()")
+    println("Create a button                    Button()")
+    println("Allow typing                       TextField()")
+    println("Arrange vertically                 Column()")
+    println("Arrange horizontally               Row()")
+    println("Overlay components                 Box()")
+    println("Display pictures                   Image()")
+    println("Display symbols                    Icon()")
+    println("Show many records                  LazyColumn()")
+    println("Remember screen data               remember")
+    println("Track changing data                mutableStateOf()")
+    println("Style components                   Modifier")
+    println("Structure a screen                 Scaffold()")
+    println("Move between screens               NavHost()")
 }
